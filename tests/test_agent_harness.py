@@ -10,6 +10,9 @@ upstream fills the operations in.
 from __future__ import annotations
 
 import pytest
+from pi_ai.types import Model
+from pi_ai.utils.retry import RetryPolicy
+
 from pi_agent.harness.agent_harness import (
     AgentHarness,
     AgentHarnessOptions,
@@ -24,8 +27,6 @@ from pi_agent.harness.session import InMemorySessionStorage, Session
 from pi_agent.harness.session.types import OperationStartedRecord, RunIntent, SessionMetadata
 from pi_agent.stream_fn import get_default_stream_fn, set_default_stream_fn
 from pi_agent.types import AgentTool
-from pi_ai.types import Model
-from pi_ai.utils.retry import RetryPolicy
 
 
 def make_session() -> Session:

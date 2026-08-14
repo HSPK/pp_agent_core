@@ -13,6 +13,9 @@ import json
 
 import httpx
 import pytest
+from pi_ai.types import AssistantMessage, Context, Model, TextContent, ThinkingContent, ToolCall, Usage, UserMessage
+from pi_ai.utils.abort import AbortSignal
+
 from pi_agent.proxy import (
     ProxyStreamOptions,
     _ProxyState,
@@ -20,8 +23,6 @@ from pi_agent.proxy import (
     process_proxy_event,
     stream_proxy,
 )
-from pi_ai.types import AssistantMessage, Context, Model, TextContent, ThinkingContent, ToolCall, Usage, UserMessage
-from pi_ai.utils.abort import AbortSignal
 
 
 def make_state() -> _ProxyState:

@@ -10,6 +10,7 @@ model's skill set.
 from __future__ import annotations
 
 import pytest
+
 from pi_agent.harness.skills import _pattern_to_regex, load_skills
 
 

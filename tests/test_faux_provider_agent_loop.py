@@ -12,6 +12,9 @@ dependency runs one way and the test always runs.
 
 from __future__ import annotations
 
+from pi_ai.providers.faux import faux_assistant_message, faux_provider, faux_tool_call
+from pi_ai.types import TextContent, UserMessage
+
 from pi_agent import (
     AgentContext,
     AgentLoopConfig,
@@ -20,8 +23,6 @@ from pi_agent import (
     agent_loop,
     default_convert_to_llm,
 )
-from pi_ai.providers.faux import faux_assistant_message, faux_provider, faux_tool_call
-from pi_ai.types import TextContent, UserMessage
 
 
 async def test_faux_provider_drives_agent_loop_prompt_tool_call_final_answer() -> None:

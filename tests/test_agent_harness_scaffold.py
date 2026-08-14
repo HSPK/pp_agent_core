@@ -9,6 +9,11 @@ from __future__ import annotations
 from collections.abc import Awaitable, Callable
 
 import pytest
+from pi_ai.providers.all import get_builtin_model
+from pi_ai.registry import Models
+from pi_ai.types import Cost, Model, TextContent, Usage, UserMessage
+from pi_ai.utils.retry import RetryPolicy
+
 from pi_agent.harness.agent_harness import (
     AgentHarness,
     AgentHarnessOptions,
@@ -22,10 +27,6 @@ from pi_agent.harness.session import InMemorySessionStorage, Session
 from pi_agent.harness.session.types import OperationStartedRecord, RunIntent, SessionMetadata
 from pi_agent.harness.types import PromptTemplate, Skill
 from pi_agent.types import AgentTool
-from pi_ai.providers.all import get_builtin_model
-from pi_ai.registry import Models
-from pi_ai.types import Cost, Model, TextContent, Usage, UserMessage
-from pi_ai.utils.retry import RetryPolicy
 
 
 def create_session(id: str = "session") -> Session:

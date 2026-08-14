@@ -8,6 +8,7 @@ No dedicated TS test file exists for `harness/result.ts`; this suite covers
 from __future__ import annotations
 
 import pytest
+
 from pi_agent.harness.result import ResultNamespace, TaggedError, match_error
 
 

@@ -24,6 +24,9 @@ from dataclasses import dataclass
 from typing import Any
 
 import pytest
+from pi_ai.types import ImageContent, TextContent
+from pi_ai.utils.abort import AbortSignal
+
 from pi_agent.harness.env.local import LocalExecutionEnv
 from pi_agent.harness.tools.bash import BashExecution, BashToolDetails, create_bash_tool
 from pi_agent.harness.tools.edit import create_edit_tool
@@ -40,8 +43,6 @@ from pi_agent.harness.types import (
     ok,
 )
 from pi_agent.harness.utils.truncate import DEFAULT_MAX_LINES
-from pi_ai.types import ImageContent, TextContent
-from pi_ai.utils.abort import AbortSignal
 
 TRUNCATED_OUTPUT_LINES = DEFAULT_MAX_LINES + 1
 

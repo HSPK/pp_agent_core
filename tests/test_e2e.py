@@ -14,8 +14,6 @@ import asyncio
 from collections.abc import Iterator
 
 import pytest
-from pi_agent.agent import Agent, MutableAgentState
-from pi_agent.types import AgentEvent
 from pi_ai import (
     AssistantMessage,
     Cost,
@@ -39,6 +37,9 @@ from pi_ai.providers.faux import (
     faux_tool_call,
 )
 from tool_utils import calculate_tool
+
+from pi_agent.agent import Agent, MutableAgentState
+from pi_agent.types import AgentEvent
 
 TIMEOUT = 20
 

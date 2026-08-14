@@ -16,8 +16,9 @@ from collections.abc import Callable
 from datetime import datetime
 from typing import Any
 
-from pi_agent.types import AgentTool, AgentToolResult
 from pi_ai import TextContent, Usage
+
+from pi_agent.types import AgentTool, AgentToolResult
 
 _BINARY_OPERATORS: dict[type[ast.operator], Callable[[Any, Any], Any]] = {
     ast.Add: operator.add,

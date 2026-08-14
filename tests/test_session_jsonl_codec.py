@@ -13,6 +13,20 @@ from __future__ import annotations
 import json
 
 import pytest
+from pi_ai.types import (
+    AssistantMessage,
+    AssistantMessageDiagnostic,
+    Cost,
+    DeferredHandle,
+    ImageContent,
+    TextContent,
+    ThinkingContent,
+    ToolCall,
+    ToolResultMessage,
+    Usage,
+    UserMessage,
+)
+
 from pi_agent.harness.session.jsonl.codec import (
     decode_entry,
     decode_header,
@@ -58,19 +72,6 @@ from pi_agent.harness.session.types import (
     ToolStartedRecord,
     UsageRecord,
     WriteDeferredRecord,
-)
-from pi_ai.types import (
-    AssistantMessage,
-    AssistantMessageDiagnostic,
-    Cost,
-    DeferredHandle,
-    ImageContent,
-    TextContent,
-    ThinkingContent,
-    ToolCall,
-    ToolResultMessage,
-    Usage,
-    UserMessage,
 )
 
 # --------------------------------------------------------------------------

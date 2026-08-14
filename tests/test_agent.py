@@ -32,10 +32,6 @@ from agent_helpers import (
     text_response,
     tool_call_response,
 )
-from pi_agent.agent import DEFAULT_MODEL, Agent, MutableAgentState, default_convert_to_llm
-from pi_agent.harness.messages import CustomMessage
-from pi_agent.stream_fn import set_default_stream_fn
-from pi_agent.types import AgentTool, AgentToolResult
 from pi_ai import (
     AssistantMessage,
     DoneEvent,
@@ -50,6 +46,11 @@ from pi_ai import (
 )
 from pi_ai.utils.event_stream import AssistantMessageEventStream
 from pi_ai.utils.tasks import spawn
+
+from pi_agent.agent import DEFAULT_MODEL, Agent, MutableAgentState, default_convert_to_llm
+from pi_agent.harness.messages import CustomMessage
+from pi_agent.stream_fn import set_default_stream_fn
+from pi_agent.types import AgentTool, AgentToolResult
 
 TIMEOUT = 5
 

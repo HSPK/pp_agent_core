@@ -26,6 +26,9 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from pi_ai import TextContent, UserMessage
+from session_conformance_helpers import operation_started
+
 from pi_agent.harness.session import (
     CustomEntry,
     EntryQuery,
@@ -40,8 +43,6 @@ from pi_agent.harness.session import (
     SessionError,
 )
 from pi_agent.harness.session.jsonl import storage as storage_module
-from pi_ai import TextContent, UserMessage
-from session_conformance_helpers import operation_started
 
 
 def create_repository(root: Path) -> JsonlSessionRepo:

@@ -15,6 +15,7 @@ import json
 from typing import Any
 
 import pytest
+
 from pi_agent.harness.session.jsonl.codec import (
     encode_header,
     encode_mutation,

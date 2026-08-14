@@ -15,6 +15,8 @@ from pathlib import Path
 from typing import Any
 
 import pytest
+from pi_ai import AssistantMessage, Cost, TextContent, ToolCall, ToolResultMessage, Usage, UserMessage
+
 from pi_agent.harness.session import (
     ActiveToolsEntry,
     BranchBounds,
@@ -45,7 +47,6 @@ from pi_agent.harness.session import (
     WriteDeferredRecord,
 )
 from pi_agent.harness.session.types import AbortRequestedRecord, OperationStartedRecord
-from pi_ai import AssistantMessage, Cost, TextContent, ToolCall, ToolResultMessage, Usage, UserMessage
 
 pytestmark = pytest.mark.asyncio
 

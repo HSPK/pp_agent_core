@@ -11,6 +11,8 @@ from collections.abc import Coroutine
 from typing import Any, Literal
 
 import pytest
+from pi_ai import AssistantMessage, Cost, TextContent, Usage, UserMessage
+
 from pi_agent.harness.session import (
     CompactionIntent,
     NavigationIntent,
@@ -18,7 +20,6 @@ from pi_agent.harness.session import (
     RunIntent,
     SessionError,
 )
-from pi_ai import AssistantMessage, Cost, TextContent, Usage, UserMessage
 
 
 def create_user_message(text: str) -> UserMessage:

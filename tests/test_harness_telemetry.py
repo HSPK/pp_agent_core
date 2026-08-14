@@ -32,6 +32,8 @@ import sys
 from pathlib import Path
 
 import pytest
+from pi_telemetry import NOOP_TELEMETRY_CONTEXT, InMemoryTelemetryContext, TelemetrySpan
+
 from pi_agent.harness.telemetry import (
     AGENT_TELEMETRY_SCHEMAS,
     AI_TELEMETRY_SCHEMA,
@@ -41,7 +43,6 @@ from pi_agent.harness.telemetry import (
     start_ai_span,
     start_harness_span,
 )
-from pi_telemetry import NOOP_TELEMETRY_CONTEXT, InMemoryTelemetryContext, TelemetrySpan
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 

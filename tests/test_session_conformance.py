@@ -27,6 +27,15 @@ from dataclasses import dataclass
 from typing import Any
 
 import pytest
+from pi_ai import Cost, TextContent, ToolResultMessage, Usage
+from session_conformance_helpers import (
+    assert_rejects_with_code,
+    create_assistant_message,
+    create_user_message,
+    entry_ids,
+    operation_started,
+)
+
 from pi_agent.harness.session import (
     BranchBounds,
     CompactionEntry,
@@ -52,14 +61,6 @@ from pi_agent.harness.session import (
     StepAttemptRecord,
     ToolStartedRecord,
     UsageRecord,
-)
-from pi_ai import Cost, TextContent, ToolResultMessage, Usage
-from session_conformance_helpers import (
-    assert_rejects_with_code,
-    create_assistant_message,
-    create_user_message,
-    entry_ids,
-    operation_started,
 )
 
 

@@ -29,10 +29,11 @@ import tempfile
 from pathlib import Path
 
 import pytest
+from pi_ai.utils.abort import AbortSignal
+
 from pi_agent.harness.env import LocalExecutionEnv
 from pi_agent.harness.types import FileError, ShellExecOptions, get_or_throw
 from pi_agent.harness.utils.shell_output import execute_shell_with_capture
-from pi_ai.utils.abort import AbortSignal
 
 
 async def test_reads_writes_lists_and_removes_files_and_directories(tmp_path: Path) -> None:

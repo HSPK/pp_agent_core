@@ -15,8 +15,9 @@ from typing import Any
 
 import httpx
 import pytest
-from pi_agent.proxy import ProxyStreamOptions, stream_proxy
 from pi_ai.types import Context, Model, ModelCost, Usage
+
+from pi_agent.proxy import ProxyStreamOptions, stream_proxy
 
 MODEL = Model(
     id="gpt-5.4",

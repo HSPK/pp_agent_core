@@ -15,6 +15,7 @@ import time
 from pathlib import Path
 
 import pytest
+
 from pi_agent.harness.session.jsonl.lockfile import FileLock, LockTimeoutError
 
 

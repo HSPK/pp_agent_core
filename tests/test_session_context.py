@@ -4,6 +4,15 @@ from __future__ import annotations
 
 from typing import Any
 
+from pi_ai.types import (
+    AssistantMessage,
+    Cost,
+    DeferredHandle,
+    TextContent,
+    Usage,
+    UserMessage,
+)
+
 from pi_agent.harness.session.context import (
     SessionContextBuildOptions,
     SessionContextModel,
@@ -17,14 +26,6 @@ from pi_agent.harness.session.types import (
     MessageEntry,
     ModelChangeEntry,
     ThinkingLevelEntry,
-)
-from pi_ai.types import (
-    AssistantMessage,
-    Cost,
-    DeferredHandle,
-    TextContent,
-    Usage,
-    UserMessage,
 )
 
 

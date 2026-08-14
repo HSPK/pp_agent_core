@@ -13,6 +13,17 @@ import copy
 from dataclasses import replace
 
 import pytest
+from pi_ai.types import (
+    AssistantMessage,
+    Cost,
+    DeferredHandle,
+    TextContent,
+    ToolCall,
+    ToolResultMessage,
+    Usage,
+    UserMessage,
+)
+
 from pi_agent.harness.reducer import (
     EffectiveLaneConfiguration,
     LaneModelConfig,
@@ -52,16 +63,6 @@ from pi_agent.harness.session.types import (
 )
 from pi_agent.harness.session.types import (
     MessageEntry as MessageEntryType,
-)
-from pi_ai.types import (
-    AssistantMessage,
-    Cost,
-    DeferredHandle,
-    TextContent,
-    ToolCall,
-    ToolResultMessage,
-    Usage,
-    UserMessage,
 )
 
 usage = Usage(input=1, output=1, cache_read=0, cache_write=0, total_tokens=2, cost=Cost())

@@ -6,6 +6,8 @@ Targets uncovered lines: 60, 84-87, 115, 121-126, 129-131, 145, 174, 186->190,
 
 from __future__ import annotations
 
+from pi_ai.utils.abort import AbortController, AbortSignal
+
 from pi_agent.harness.types import ExecutionError, FileError, ShellExecResult, err, ok
 from pi_agent.harness.utils.shell_output import (
     ShellCaptureOptions,
@@ -16,7 +18,6 @@ from pi_agent.harness.utils.shell_output import (
     sanitize_binary_output,
 )
 from pi_agent.harness.utils.truncate import DEFAULT_MAX_BYTES, DEFAULT_MAX_LINES
-from pi_ai.utils.abort import AbortController, AbortSignal
 
 
 class FakeEnv:

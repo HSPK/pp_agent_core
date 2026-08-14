@@ -15,6 +15,18 @@ from types import SimpleNamespace
 
 import pytest
 from agent_helpers import TEST_MODEL, scripted_stream_fn
+from pi_ai.types import (
+    AssistantMessage,
+    ImageContent,
+    Model,
+    TextContent,
+    ThinkingContent,
+    ToolCall,
+    ToolResultMessage,
+    Usage,
+    UserMessage,
+)
+
 from pi_agent.harness.compaction.compaction import (
     DEFAULT_COMPACTION_SETTINGS,
     CompactionPreparation,
@@ -44,17 +56,6 @@ from pi_agent.harness.session.types import (
     ThinkingLevelEntry,
 )
 from pi_agent.harness.types import get_or_throw
-from pi_ai.types import (
-    AssistantMessage,
-    ImageContent,
-    Model,
-    TextContent,
-    ThinkingContent,
-    ToolCall,
-    ToolResultMessage,
-    Usage,
-    UserMessage,
-)
 
 _next_id = 0
 

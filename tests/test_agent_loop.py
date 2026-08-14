@@ -25,6 +25,8 @@ from agent_helpers import (
     text_response,
     tool_call_response,
 )
+from pi_ai import Cost, Model, TextContent, ToolCall, Usage, UserMessage, now_ms
+
 from pi_agent import (
     AfterToolCallResult,
     AgentContext,
@@ -39,7 +41,6 @@ from pi_agent import (
     run_agent_loop,
 )
 from pi_agent.stream_fn import set_default_stream_fn
-from pi_ai import Cost, Model, TextContent, ToolCall, Usage, UserMessage, now_ms
 
 
 @dataclass

@@ -9,6 +9,8 @@ directly: `bash_execution_to_text`, `create_custom_message`, and
 
 from __future__ import annotations
 
+from pi_ai.types import TextContent, ToolResultMessage, UserMessage
+
 from pi_agent.harness.messages import (
     BRANCH_SUMMARY_PREFIX,
     BRANCH_SUMMARY_SUFFIX,
@@ -22,7 +24,6 @@ from pi_agent.harness.messages import (
     create_compaction_summary_message,
     create_custom_message,
 )
-from pi_ai.types import TextContent, ToolResultMessage, UserMessage
 
 
 def _bash_message(**overrides: object) -> BashExecutionMessage:

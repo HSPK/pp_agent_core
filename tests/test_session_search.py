@@ -12,6 +12,9 @@ import json
 from typing import Any
 
 import pytest
+from pi_ai.utils.abort import AbortController, AbortError
+from session_conformance_helpers import create_user_message
+
 from pi_agent.harness.session import InMemorySessionRepo, JsonlSessionCreateOptions, JsonlSessionRepo
 from pi_agent.harness.session.jsonl.repo import list_jsonl_session_metadata, load_jsonl_session_storage
 from pi_agent.harness.session.jsonl.types import JsonlSessionRepoOptions
@@ -23,8 +26,6 @@ from pi_agent.search import (
     create_scanning_session_search,
     scanning_entries,
 )
-from pi_ai.utils.abort import AbortController, AbortError
-from session_conformance_helpers import create_user_message
 
 
 async def _collect(iterable: Any) -> list[Any]:

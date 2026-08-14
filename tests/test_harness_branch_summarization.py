@@ -17,6 +17,16 @@ import asyncio
 
 import pytest
 from agent_helpers import TEST_MODEL, scripted_stream_fn
+from pi_ai.types import (
+    AssistantMessage,
+    Model,
+    TextContent,
+    ToolCall,
+    ToolResultMessage,
+    Usage,
+    UserMessage,
+)
+
 from pi_agent.harness.compaction.branch_summarization import (
     GenerateBranchSummaryOptions,
     collect_entries_for_branch_summary,
@@ -35,15 +45,6 @@ from pi_agent.harness.session.types import (
     SessionError,
     SessionMetadata,
     ThinkingLevelEntry,
-)
-from pi_ai.types import (
-    AssistantMessage,
-    Model,
-    TextContent,
-    ToolCall,
-    ToolResultMessage,
-    Usage,
-    UserMessage,
 )
 
 TIMEOUT = 5.0
