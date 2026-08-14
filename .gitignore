@@ -1,4 +1,5 @@
 __pycache__/
+uv.lock
 *.py[cod]
 .venv/
 .pytest_cache/

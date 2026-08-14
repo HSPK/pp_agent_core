@@ -46,7 +46,10 @@ dev = [
     "pytest-asyncio>=0.24",
     "pytest-cov>=6.0",
     "pytest-xdist>=3.6",
-    "ruff>=0.8",
+    # Pinned, not floored: `release.yml` gates publishing on `ruff check`, so a
+    # new ruff release introducing a rule would block every package's release
+    # for a reason unrelated to the release. Bump it deliberately instead.
+    "ruff==0.16.3",
     "mypy>=1.13",
 ]
 
