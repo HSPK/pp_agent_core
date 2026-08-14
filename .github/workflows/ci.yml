@@ -1,0 +1,33 @@
+# Lint, format and test checks.
+#
+# Runs on pull requests only: `main` is protected and takes commits through
+# PRs, so a push-triggered run would re-test the exact tree the PR already
+# tested. `release.yml` calls this same workflow through `workflow_call`, so
+# the release path and the merge path cannot drift apart.
+name: ci
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+  workflow_dispatch:
+
+env:
+  UV_VERSION: "0.12.1"
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: ${{ env.UV_VERSION }}
+          enable-cache: true
+      - run: uv sync
+      - name: ruff check
+        run: uv run ruff check .
+      - name: ruff format --check
+        run: uv run ruff format --check .
+      - name: pytest
+        run: uv run pytest

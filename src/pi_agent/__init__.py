@@ -1,0 +1,108 @@
+"""Agent loop and harness (Python port of ``@earendil-works/pi-agent-core``).
+
+Ports `packages/agent/src/index.ts` and `packages/agent/src/node.ts` (the Node
+entrypoint, which only re-exports `harness/env/nodejs.ts` on top of the shared
+surface and so needs no separate Python module)."""
+
+from __future__ import annotations
+
+from .agent import (
+    Agent,
+    MutableAgentState,
+    PendingMessageQueue,
+    default_convert_to_llm,
+)
+from .agent_loop import (
+    AgentEventSink,
+    agent_loop,
+    agent_loop_continue,
+    run_agent_loop,
+    run_agent_loop_continue,
+)
+from .proxy import (
+    ProxyError,
+    ProxyMessageEventStream,
+    ProxyStreamOptions,
+    stream_proxy,
+)
+from .stream_fn import get_default_stream_fn, set_default_stream_fn
+from .types import (
+    AfterToolCallContext,
+    AfterToolCallResult,
+    AgentContext,
+    AgentEndEvent,
+    AgentEvent,
+    AgentLoopConfig,
+    AgentLoopTurnUpdate,
+    AgentMessage,
+    AgentStartEvent,
+    AgentState,
+    AgentTool,
+    AgentToolCall,
+    AgentToolResult,
+    AgentToolUpdateCallback,
+    BeforeToolCallContext,
+    BeforeToolCallResult,
+    MessageEndEvent,
+    MessageStartEvent,
+    MessageUpdateEvent,
+    PrepareNextTurnContext,
+    QueueMode,
+    ShouldStopAfterTurnContext,
+    StreamFn,
+    ThinkingLevel,
+    ToolExecutionEndEvent,
+    ToolExecutionMode,
+    ToolExecutionStartEvent,
+    ToolExecutionUpdateEvent,
+    TurnEndEvent,
+    TurnStartEvent,
+)
+
+__all__ = [
+    "AfterToolCallContext",
+    "AfterToolCallResult",
+    "Agent",
+    "AgentContext",
+    "AgentEndEvent",
+    "AgentEvent",
+    "AgentEventSink",
+    "AgentLoopConfig",
+    "AgentLoopTurnUpdate",
+    "AgentMessage",
+    "AgentStartEvent",
+    "AgentState",
+    "AgentTool",
+    "AgentToolCall",
+    "AgentToolResult",
+    "AgentToolUpdateCallback",
+    "BeforeToolCallContext",
+    "BeforeToolCallResult",
+    "MessageEndEvent",
+    "MessageStartEvent",
+    "MessageUpdateEvent",
+    "MutableAgentState",
+    "PendingMessageQueue",
+    "PrepareNextTurnContext",
+    "ProxyError",
+    "ProxyMessageEventStream",
+    "ProxyStreamOptions",
+    "QueueMode",
+    "ShouldStopAfterTurnContext",
+    "StreamFn",
+    "ThinkingLevel",
+    "ToolExecutionEndEvent",
+    "ToolExecutionMode",
+    "ToolExecutionStartEvent",
+    "ToolExecutionUpdateEvent",
+    "TurnEndEvent",
+    "TurnStartEvent",
+    "agent_loop",
+    "agent_loop_continue",
+    "default_convert_to_llm",
+    "get_default_stream_fn",
+    "run_agent_loop",
+    "run_agent_loop_continue",
+    "set_default_stream_fn",
+    "stream_proxy",
+]
