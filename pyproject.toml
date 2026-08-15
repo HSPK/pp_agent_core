@@ -1,6 +1,6 @@
 [project]
 name = "pp-agent-core"
-version = "0.1.0"
+version = "0.2.0"
 description = "General-purpose agent with transport abstraction, state management, and attachment support (Python port of @earendil-works/pi-agent-core)"
 readme = "README.md"
 license = "MIT"
@@ -22,8 +22,8 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "pp-ai==0.1.0",
-    "pp-telemetry==0.1.0",
+    "pp-ai==0.2.0",
+    "pp-telemetry==0.2.0",
     "pyyaml>=6.0",
 ]
 

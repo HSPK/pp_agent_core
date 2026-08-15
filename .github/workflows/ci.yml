@@ -24,7 +24,10 @@ jobs:
         with:
           version: ${{ env.UV_VERSION }}
           enable-cache: true
-      - run: uv sync
+      # `--all-groups`: a package may declare dependency groups beyond `dev`
+      # (pp-rpc-server puts its client-side integration dependency in `test`),
+      # and a plain `uv sync` installs only `dev`, so those tests error out.
+      - run: uv sync --all-groups
       - name: ruff check
         run: uv run ruff check .
       - name: ruff format --check
