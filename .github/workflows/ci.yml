@@ -1,14 +1,28 @@
 # Lint, format and test checks.
 #
-# Runs on pull requests only: `main` is protected and takes commits through
-# PRs, so a push-triggered run would re-test the exact tree the PR already
-# tested. `release.yml` calls this same workflow through `workflow_call`, so
-# the release path and the merge path cannot drift apart.
+# Runs on pull requests, and on a schedule.
+#
+# Pull requests: `main` is protected and takes commits through PRs, so a
+# push-triggered run would re-test the exact tree the PR already tested.
+# `release.yml` calls this same workflow through `workflow_call`, so the
+# release path and the merge path cannot drift apart.
+#
+# Schedule: internal dependencies are constrained with `~=`, so a patch
+# release of a sibling reaches users of this package without this package
+# being rebuilt. Nothing here is pinned by a lockfile, so each run re-resolves
+# and tests against whatever the constraints admit today. Without this, a
+# sibling patch that breaks this package would sit undetected until someone
+# happened to open a pull request here.
 name: ci
 
 on:
   pull_request:
     branches: [main]
+  schedule:
+    # 05:00 UTC daily. GitHub disables scheduled workflows on repositories with
+    # no activity for 60 days, so a silent stop is possible; the run history is
+    # the place to confirm it is still firing.
+    - cron: "0 5 * * *"
   workflow_call:
   workflow_dispatch:
 
